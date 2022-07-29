@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual C# Express 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARCHBLOXLauncher_XP", "ARCHBLOXLauncher_XP\ARCHBLOXLauncher_XP.csproj", "{11134DDF-A25D-4EF8-89A6-1A1BF2310F07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARCHBLOXLauncher_XP", "ARCHBLOXLauncher_XP.csproj", "{11134DDF-A25D-4EF8-89A6-1A1BF2310F07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

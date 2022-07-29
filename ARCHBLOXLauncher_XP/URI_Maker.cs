@@ -7,7 +7,7 @@ namespace ARCHBLOXProtocol
     };
     internal static class ARCHBLOXURIProtocol
     {
-        private static RegistryKey softwareClasses = Registry.CurrentUser.OpenSubKey("Software").OpenSubKey("Classes", true);
+        private static RegistryKey softwareClasses = Registry.CurrentUser.OpenSubKey("Software").OpenSubKey("Classes").OpenSubKey("Software",true);
 
         internal static void Register()
         {

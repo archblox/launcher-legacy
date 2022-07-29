@@ -72,7 +72,7 @@
             // serverip
             // 
             this.serverip.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.serverip.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.serverip.ForeColor = System.Drawing.SystemColors.MenuText;
             this.serverip.Location = new System.Drawing.Point(5, 34);
             this.serverip.MaxLength = 15;
             this.serverip.Name = "serverip";
@@ -91,7 +91,7 @@
             // 
             // serverport
             // 
-            this.serverport.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.serverport.ForeColor = System.Drawing.SystemColors.MenuText;
             this.serverport.Location = new System.Drawing.Point(5, 72);
             this.serverport.MaxLength = 5;
             this.serverport.Name = "serverport";
@@ -152,7 +152,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textBox1.ForeColor = System.Drawing.SystemColors.MenuText;
             this.textBox1.Location = new System.Drawing.Point(5, 32);
             this.textBox1.MaxLength = 5;
             this.textBox1.Name = "textBox1";
@@ -185,7 +185,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textBox2.ForeColor = System.Drawing.SystemColors.MenuText;
             this.textBox2.Location = new System.Drawing.Point(5, 71);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(168, 21);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IWshRuntimeLibrary;
+using System;
 using System.Text;
 using System.Diagnostics;
 using System.Windows.Forms;
@@ -19,10 +20,22 @@ namespace ARCHBLOXLauncher_XP
         static string clientPath = Path.Combine(folderPath, version_string + @"\");
         static string filePath = Path.Combine(clientPath, "ArchbloxPlayerBeta.exe");
         // animations
+        private void CreateShortcut()
+        {
+            // create a shorcut on the user's desktop
+            object shDesktop = (object)"Desktop";
+            WshShell shell = new WshShell();
+            string shortcutAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + @"\ARCHBLOX Launcher.lnk";
+            IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(shortcutAddress);
+            shortcut.Description = "ARCHBLOX Launcher";
+            shortcut.TargetPath = Extensions.GetExecutablePath();
+            shortcut.Save();
+        }
         public Form1()
         {
             InitializeComponent();
             ARCHBLOXProtocol.ARCHBLOXURIProtocol.Register();
+            CreateShortcut();
             var lastword = "";
             var info1 = "";
             var info2 = "";
@@ -220,7 +233,7 @@ namespace ARCHBLOXLauncher_XP
                         {
                             // it's supported, yay!
                             string destFile = Path.Combine(clientPath, @"Content\", Path.GetFileName(dialog.FileName));
-                            System.IO.File.Copy(dialog.FileName, destFile, true);
+                            if (!System.IO.File.Exists(destFile)) { System.IO.File.Copy(dialog.FileName, destFile, true); }
                             textBox2.Text = Path.GetFileName(dialog.FileName);
                             return;
                         }
