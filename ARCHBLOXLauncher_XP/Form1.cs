@@ -1,6 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Drawing;
 using System.Text;
 using System.Diagnostics;
 using System.Windows.Forms;
@@ -14,7 +12,7 @@ namespace ARCHBLOXLauncher_XP
         bool rbxl = false;
         bool exitafterarg = false;
         private static WebClient wc = new WebClient();
-        static byte[] raw = wc.DownloadData("https://archblox.com/client/version.txt");
+        static byte[] raw = wc.DownloadData("http://archblox.com/client/version.txt");
         static string webData = Encoding.UTF8.GetString(raw);
         static string version_string = webData;
         static string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"Archblx\", @"Versions\");

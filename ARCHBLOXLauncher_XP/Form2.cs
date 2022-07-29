@@ -30,7 +30,7 @@ namespace ARCHBLOXLauncher_XP
             InitializeComponent();
             // setup other variables
             try {
-                wc.DownloadData("https://archblox.com/client/version.txt");
+                wc.DownloadData("http://archblox.com/client/version.txt");
             }
             catch
             {
@@ -38,12 +38,12 @@ namespace ARCHBLOXLauncher_XP
                 label1.Text = "Cancelled install.";
                 return;
             }
-            byte[] raw = wc.DownloadData("https://archblox.com/client/version.txt");
+            byte[] raw = wc.DownloadData("http://archblox.com/client/version.txt");
             string webData = Encoding.UTF8.GetString(raw);
             string version_string = webData;
             string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"Archblx\", @"Versions\");
             string clientPath = Path.Combine(folderPath, version_string + @"\");
-            string filePath = Path.Combine(clientPath, Path.GetFileName(@"https://archblox.com/client/" + version_string + ".zip"));
+            string filePath = Path.Combine(clientPath, Path.GetFileName(@"http://archblox.com/client/" + version_string + ".zip"));
             // setup file paths etc
             {
                 if (Directory.Exists(folderPath))
@@ -85,7 +85,7 @@ namespace ARCHBLOXLauncher_XP
             {
                 // continue with install
                 Directory.CreateDirectory(clientPath);
-                wc.DownloadFileAsync(new Uri(@"https://archblox.com/client/" + version_string + ".zip"), filePath);
+                wc.DownloadFileAsync(new Uri(@"http://archblox.com/client/" + version_string + ".zip"), filePath);
                 progressBar1.Style = ProgressBarStyle.Blocks;
                 handle.WaitOne();
             }
@@ -96,13 +96,13 @@ namespace ARCHBLOXLauncher_XP
             {
                 // the download has completed, extract zip, setup URI.
                 IsCompleted = true;
-                byte[] raw = wc.DownloadData("https://archblox.com/client/version.txt");
+                byte[] raw = wc.DownloadData("http://archblox.com/client/version.txt");
                 string webData = Encoding.UTF8.GetString(raw);
                 string version_string = webData;
                 string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"Archblx\", @"Versions\");
                 string clientPath = Path.Combine(folderPath, version_string + @"\");
-                string filePath = Path.Combine(clientPath, Path.GetFileName(@"https://archblox.com/client/" + version_string + ".zip"));
-                // ZipFile(filePath, clientPath);
+                string filePath = Path.Combine(clientPath, Path.GetFileName(@"http://archblox.com/client/" + version_string + ".zip"));
+                Extensions.UnZip(filePath, clientPath);
                 File.Delete(filePath);
                 label1.Text = "Installing URi...";
                 try
