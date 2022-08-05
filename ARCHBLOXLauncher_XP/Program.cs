@@ -11,10 +11,17 @@ namespace ARCHBLOXLauncher_XP
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            if (args.Length > 0)
+            {
+                foreach (string s in args)
+                {
+                    ARCHBLOXProtocol.SharedVariables.Arguments = s;
+                }
+            }
             Application.Run(new Form1());
         }
     }

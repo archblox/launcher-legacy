@@ -20,7 +20,7 @@ namespace ARCHBLOXLauncher_XP
 
         private static long GetDirectorySize(string folderPath)
         {
-            // get size of a directory
+            // get size of a directory, important for showing the user how much space ARCHBLOX takes
             DirectoryInfo di = new DirectoryInfo(folderPath);
             return di.EnumerateFiles("*", SearchOption.AllDirectories).Sum(fi => fi.Length) / 1000000;
         }
@@ -29,65 +29,75 @@ namespace ARCHBLOXLauncher_XP
         {
             InitializeComponent();
             // setup other variables
-            try {
+            progressBar1.Style = ProgressBarStyle.Marquee;
+            try
+            {
                 wc.DownloadData("http://archblox.com/client/version.txt");
             }
             catch
             {
-                MessageBox.Show("Unable to connect to the ARCHBLOX servers!", "ARCHBLOX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                label1.Text = "Cancelled install.";
-                return;
-            }
-            byte[] raw = wc.DownloadData("http://archblox.com/client/version.txt");
-            string webData = Encoding.UTF8.GetString(raw);
-            string version_string = webData;
-            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"Archblx\", @"Versions\");
-            string clientPath = Path.Combine(folderPath, version_string + @"\");
-            string filePath = Path.Combine(clientPath, Path.GetFileName(@"http://archblox.com/client/" + version_string + ".zip"));
-            // setup file paths etc
-            {
-                if (Directory.Exists(folderPath))
-                {
-                    // since the folder already exists, show size of folder and ask user if they want to delete older versions
-                    DialogResult res = MessageBox.Show("Do you want to delete previous installs of ARCHBLOX? Current size of ARCHBLOX folder: " + GetDirectorySize(folderPath) + "MB.", "ARCHBLOX", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                    if (res == DialogResult.Yes)
-                    {
-                        label1.Text = "Removing previous installs...";
-                        Directory.Delete(folderPath, true);
-
-                    }
-                }
-            }
-            // setup variables
-            wc.DownloadProgressChanged += Client_DownloadProgressChanged;
-            wc.DownloadFileCompleted += Client_DownloadFileCompleted;
-            progressBar1.Style = ProgressBarStyle.Marquee;
-            label1.Text = "Configuring ARCHBLOX...";
-            wc.DownloadProgressChanged += Client_DownloadProgressChanged;
-            wc.DownloadFileCompleted += Client_DownloadFileCompleted;
-            if (Directory.Exists(clientPath))
-            {
-                // ask user if they want to re-install
-                DialogResult res = MessageBox.Show("The latest version of ARCHBLOX is already installed. Do you want to re-install it?", "ARCHBLOX", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (res == DialogResult.Yes)
-                {
-                    label1.Text = "Removing previous installs...";
-                    Directory.Delete(clientPath, true);
-
-                }
-                if (res == DialogResult.No)
-                {
-                    label1.Text = "Cancelled install.";
-                    DontEvenBother = true;
-                }
+                MessageBox.Show("An error occoured while installing ARCHBLOX\n\nDetails: HttpOpenRequest failed for GET http://archblox.com/client/version.txt, Error ID: 6", "ARCHBLOX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DontEvenBother = true;
             }
             if (DontEvenBother == false)
             {
-                // continue with install
-                Directory.CreateDirectory(clientPath);
-                wc.DownloadFileAsync(new Uri(@"http://archblox.com/client/" + version_string + ".zip"), filePath);
-                progressBar1.Style = ProgressBarStyle.Blocks;
-                handle.WaitOne();
+                byte[] raw = wc.DownloadData("http://archblox.com/client/version.txt");
+                string webData = Encoding.UTF8.GetString(raw);
+                string version_string = webData;
+                string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"Archblx\", @"Versions\");
+                string clientPath = Path.Combine(folderPath, version_string + @"\");
+                string filePath = Path.Combine(Path.GetTempPath(), version_string + ".zip");
+                // setup file paths etc
+                {
+                    if (Directory.Exists(folderPath))
+                    {
+                        // since the folder already exists, show size of folder and ask user if they want to delete older versions
+                        DialogResult res = MessageBox.Show("Do you want to delete previous installs of ARCHBLOX? Current size of ARCHBLOX folder: " + GetDirectorySize(folderPath) + "MB.", "ARCHBLOX", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        if (res == DialogResult.Yes)
+                        {
+                            label1.Text = "Removing previous installs...";
+                            Directory.Delete(folderPath, true);
+                        }
+                    }
+                }
+                // setup variables
+                wc.DownloadProgressChanged += Client_DownloadProgressChanged;
+                wc.DownloadFileCompleted += Client_DownloadFileCompleted;
+                label1.Text = "Configuring ARCHBLOX...";
+                if (Directory.Exists(clientPath))
+                {
+                    // ask user if they want to re-install
+                    DialogResult res = MessageBox.Show("The latest version of ARCHBLOX is already installed. Do you want to re-install it?", "ARCHBLOX", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (res == DialogResult.Yes)
+                    {
+                        label1.Text = "Removing previous install...";
+                        Directory.Delete(clientPath, true);
+
+                    }
+                    if (res == DialogResult.No)
+                    {
+                        label1.Text = "Cancelled install.";
+                        DontEvenBother = true;
+                    }
+                }
+                if (DontEvenBother == false)
+                {
+                    // continue with install
+                    Directory.CreateDirectory(clientPath);
+                    wc.DownloadFileAsync(new Uri(@"http://archblox.com/client/" + version_string + ".zip"), filePath);
+                    progressBar1.Style = ProgressBarStyle.Blocks;
+                    handle.WaitOne();
+                }
+                else
+                {
+                    this.Hide();
+                    this.Close();
+                }
+            }
+            else
+            {
+                this.Hide();
+                this.Close();
             }
         }
         private void Client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
@@ -101,7 +111,7 @@ namespace ARCHBLOXLauncher_XP
                 string version_string = webData;
                 string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"Archblx\", @"Versions\");
                 string clientPath = Path.Combine(folderPath, version_string + @"\");
-                string filePath = Path.Combine(clientPath, Path.GetFileName(@"http://archblox.com/client/" + version_string + ".zip"));
+                string filePath = Path.Combine(Path.GetTempPath(), version_string + ".zip");
                 Extensions.UnZip(filePath, clientPath);
                 File.Delete(filePath);
                 label1.Text = "Installing URi...";
@@ -119,7 +129,9 @@ namespace ARCHBLOXLauncher_XP
                 {
                     label1.Text = "ARCHBLOX installed without URI.";
                 }
-
+                Thread.Sleep(1000);
+                this.Hide();
+                this.Close();
             }
         }
 

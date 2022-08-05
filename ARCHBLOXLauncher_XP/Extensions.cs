@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
-
+using System.Text;
+using System.Net;
 namespace ARCHBLOXLauncher_XP
 {
     public static class Extensions
@@ -28,6 +29,19 @@ namespace ARCHBLOXLauncher_XP
             {
                 destinationFolder.CopyHere(file, 4 | 16);
             }
+        }
+
+        public static string GetVersionString()
+        {
+            WebClient wc = new WebClient();
+            try { wc.DownloadData("http://archblox.com/client/version.txt"); }
+            catch
+            {
+                return ("nil");
+            }
+            byte[] raw = wc.DownloadData("http://archblox.com/client/version.txt");
+            string webData = Encoding.UTF8.GetString(raw);
+            return(webData);
         }
     }
 }

@@ -111,7 +111,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button2.BackgroundImage = global::ARCHBLOXLauncher_XP.Properties.Resources.buttongreen200;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -171,7 +171,7 @@
             // 
             // button3
             // 
-            this.button3.BackgroundImage = global::ARCHBLOXLauncher_XP.Properties.Resources.buttonblue200;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -194,7 +194,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button1.BackgroundImage = global::ARCHBLOXLauncher_XP.Properties.Resources.buttongreen200;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -209,7 +209,7 @@
             // BackBTN
             // 
             this.BackBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.BackBTN.BackgroundImage = global::ARCHBLOXLauncher_XP.Properties.Resources.buttonblue200;
+            this.BackBTN.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackBTN.BackgroundImage")));
             this.BackBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BackBTN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BackBTN.Font = new System.Drawing.Font("Tahoma", 10.25F, System.Drawing.FontStyle.Bold);
@@ -225,7 +225,7 @@
             // UpdateBTN
             // 
             this.UpdateBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.UpdateBTN.BackgroundImage = global::ARCHBLOXLauncher_XP.Properties.Resources.buttonblue200;
+            this.UpdateBTN.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("UpdateBTN.BackgroundImage")));
             this.UpdateBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.UpdateBTN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.UpdateBTN.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
@@ -241,7 +241,7 @@
             // JoinBTN
             // 
             this.JoinBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.JoinBTN.BackgroundImage = global::ARCHBLOXLauncher_XP.Properties.Resources.buttonblue200;
+            this.JoinBTN.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("JoinBTN.BackgroundImage")));
             this.JoinBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.JoinBTN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.JoinBTN.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
@@ -257,7 +257,7 @@
             // HostBTN
             // 
             this.HostBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.HostBTN.BackgroundImage = global::ARCHBLOXLauncher_XP.Properties.Resources.buttonblue200;
+            this.HostBTN.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("HostBTN.BackgroundImage")));
             this.HostBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.HostBTN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.HostBTN.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
@@ -274,7 +274,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Image = global::ARCHBLOXLauncher_XP.Properties.Resources.archbloxlowres;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(14, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(174, 34);
@@ -314,7 +314,6 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "ARCHBLOX";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.JoinBox.ResumeLayout(false);
             this.JoinBox.PerformLayout();
             this.HostBox.ResumeLayout(false);
