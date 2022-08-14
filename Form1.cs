@@ -42,7 +42,7 @@ namespace ARCHBLOXLauncher_XP
             catch
             {
                 MessageBox.Show("An error occoured while starting ARCHBLOX\n\nDetails: HttpOpenRequest failed for GET http://archblox.com/client/version.txt, Error ID: 6", "ARCHBLOX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Environment.Exit(0);
+                // Environment.Exit(0);
             }
             ARCHBLOXProtocol.ARCHBLOXURIProtocol.Register();
             CreateShortcut();
@@ -180,6 +180,7 @@ namespace ARCHBLOXLauncher_XP
                 pProcess.StartInfo.CreateNoWindow = false;
                 pProcess.Start();
                 pProcess.EnableRaisingEvents = true;
+                var random = new Random();
                 MessageBox.Show("Starting game server on port " + textBox1.Text + " using " + textBox2.Text, "ARCHBLOX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -202,7 +203,6 @@ namespace ARCHBLOXLauncher_XP
             }
             else
             {
-
                 var pProcess = new Process();
                 pProcess.StartInfo.FileName = filePath;
                 pProcess.StartInfo.Arguments = "-a \"http://www.morblox.us/\" -j \"http://www.morblox.us/game/join.ashx?port=" + serverport.Text + "&ip=" + serverip.Text + "\" -t \"1\"";

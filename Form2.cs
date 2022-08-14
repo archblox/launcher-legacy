@@ -43,10 +43,10 @@ namespace ARCHBLOXLauncher_XP
             {
                 byte[] raw = wc.DownloadData("http://archblox.com/client/version.txt");
                 string webData = Encoding.UTF8.GetString(raw);
-                string version_string = webData;
+                string version_string = webData;    
                 string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"Archblx\", @"Versions\");
                 string clientPath = Path.Combine(folderPath, version_string + @"\");
-                string filePath = Path.Combine(Path.GetTempPath(), version_string + ".zip");
+                string filePath = Path.Combine(Path.GetTempPath(),version_string + ".zip");
                 // setup file paths etc
                 {
                     if (Directory.Exists(folderPath))
@@ -87,14 +87,12 @@ namespace ARCHBLOXLauncher_XP
                     wc.DownloadFileAsync(new Uri(@"http://archblox.com/client/" + version_string + ".zip"), filePath);
                     progressBar1.Style = ProgressBarStyle.Blocks;
                     handle.WaitOne();
-                }
-                else
+                } else
                 {
                     this.Hide();
                     this.Close();
                 }
-            }
-            else
+            } else
             {
                 this.Hide();
                 this.Close();
@@ -116,7 +114,7 @@ namespace ARCHBLOXLauncher_XP
                 File.Delete(filePath);
                 label1.Text = "Installing URi...";
                 try
-                {
+                {   
                     ARCHBLOXProtocol.ARCHBLOXURIProtocol.Register();
                     Uri_Installed = true;
                 }
@@ -124,8 +122,7 @@ namespace ARCHBLOXLauncher_XP
                 if (Uri_Installed == true)
                 {
                     label1.Text = "ARCHBLOX has been installed!";
-                }
-                else
+                } else
                 {
                     label1.Text = "ARCHBLOX installed without URI.";
                 }

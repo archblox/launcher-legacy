@@ -48,7 +48,7 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label1.Location = new System.Drawing.Point(58, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(237, 21);
@@ -58,6 +58,8 @@
             // 
             // progressBar1
             // 
+            this.progressBar1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.progressBar1.BackColor = System.Drawing.Color.White;
             this.progressBar1.Location = new System.Drawing.Point(58, 51);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(287, 26);
@@ -65,12 +67,15 @@
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 146);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(352, 136);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

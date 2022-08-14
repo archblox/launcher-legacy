@@ -73,9 +73,9 @@ namespace ARCHBLOXLauncher_XP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap archbloxlowres {
+        internal static System.Drawing.Bitmap buttonblue {
             get {
-                object obj = ResourceManager.GetObject("archbloxlowres", resourceCulture);
+                object obj = ResourceManager.GetObject("buttonblue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace ARCHBLOXLauncher_XP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap buttonblue200 {
+        internal static System.Drawing.Bitmap buttongreen {
             get {
-                object obj = ResourceManager.GetObject("buttonblue200", resourceCulture);
+                object obj = ResourceManager.GetObject("buttongreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,20 +93,10 @@ namespace ARCHBLOXLauncher_XP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap buttongreen200 {
+        internal static System.Drawing.Bitmap unknown {
             get {
-                object obj = ResourceManager.GetObject("buttongreen200", resourceCulture);
+                object obj = ResourceManager.GetObject("unknown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] Thumbs {
-            get {
-                object obj = ResourceManager.GetObject("Thumbs", resourceCulture);
-                return ((byte[])(obj));
             }
         }
     }

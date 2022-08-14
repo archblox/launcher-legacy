@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ARCHBLOX Launcher")]
-[assembly: AssemblyDescription("ARCHBLOX Launcher for Windows XP and Vista")]
+[assembly: AssemblyTitle("ARCHBLOXLauncher_XP")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("")]
+[assembly: AssemblyProduct("ARCHBLOXLauncher_XP")]
+[assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("17e4483b-21d9-4182-9390-3738ffe7e059")]
+[assembly: Guid("79dd365c-346f-4fd1-892f-0c7d63649b82")]
 
 // Version information for an assembly consists of the following four values:
 //

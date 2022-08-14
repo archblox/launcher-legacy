@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{FE8FC745-5077-4C8D-9017-A13490C48BC2}</ProjectGuid>
+    <ProjectGuid>{49DD1842-81E0-4D7E-AFE9-6270B3DDF9A1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ARCHBLOXLauncher_XP</RootNamespace>
@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>archblox.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,7 +63,6 @@
     <Compile Include="Form2.designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="obj\x86\Debug\.NETFramework,Version=v4.0.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="URI_Maker.cs" />
@@ -70,13 +72,6 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\x86\Debug\ARCHBLOXLauncher_XP.Form1.resources" />
-    <EmbeddedResource Include="obj\x86\Debug\ARCHBLOXLauncher_XP.Form2.resources" />
-    <EmbeddedResource Include="obj\x86\Debug\ARCHBLOXLauncher_XP.Properties.Resources.resources" />
-    <EmbeddedResource Include="obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources" />
-    <EmbeddedResource Include="obj\x86\Release\ARCHBLOXLauncher_XP.Form1.resources" />
-    <EmbeddedResource Include="obj\x86\Release\ARCHBLOXLauncher_XP.Form2.resources" />
-    <EmbeddedResource Include="obj\x86\Release\ARCHBLOXLauncher_XP.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -88,19 +83,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
-    <None Include="bin\Debug\ARCHBLOXLauncher_XP.exe.config" />
-    <None Include="bin\Debug\ARCHBLOXLauncher_XP.vshost.exe.config" />
-    <None Include="bin\Release\ARCHBLOXLauncher_XP.exe.config" />
-    <None Include="obj\x86\Debug\ARCHBLOXLauncher_XP.csproj.AssemblyReference.cache" />
-    <None Include="obj\x86\Debug\ARCHBLOXLauncher_XP.csproj.ResolveComReference.cache" />
-    <None Include="obj\x86\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="obj\x86\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\x86\Debug\GenerateResource.read.1.tlog" />
-    <None Include="obj\x86\Debug\GenerateResource.write.1.tlog" />
-    <None Include="obj\x86\Release\ARCHBLOXLauncher_XP.csproj.ResolveComReference.cache" />
-    <None Include="obj\x86\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\x86\Release\GenerateResource.read.1.tlog" />
-    <None Include="obj\x86\Release\GenerateResource.write.1.tlog" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -110,35 +92,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\Thumbs.db" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin\Debug\ARCHBLOXLauncher_XP.exe" />
-    <Content Include="bin\Debug\ARCHBLOXLauncher_XP.pdb" />
-    <Content Include="bin\Debug\ARCHBLOXLauncher_XP.vshost.exe" />
-    <Content Include="bin\Debug\WindowsFormsApplication1.exe" />
-    <Content Include="bin\Debug\WindowsFormsApplication1.pdb" />
-    <Content Include="bin\Release\ARCHBLOXLauncher_XP.exe" />
-    <Content Include="bin\Release\ARCHBLOXLauncher_XP.pdb" />
-    <Content Include="obj\x86\Debug\ARCHBLOXLauncher_XP.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\x86\Debug\ARCHBLOXLauncher_XP.exe" />
-    <Content Include="obj\x86\Debug\ARCHBLOXLauncher_XP.pdb" />
-    <Content Include="obj\x86\Debug\Interop.IWshRuntimeLibrary.dll" />
-    <Content Include="obj\x86\Debug\Interop.Shell32.dll" />
-    <Content Include="obj\x86\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
-    <Content Include="obj\x86\Debug\WindowsFormsApplication1.exe" />
-    <Content Include="obj\x86\Debug\WindowsFormsApplication1.pdb" />
-    <Content Include="obj\x86\Release\ARCHBLOXLauncher_XP.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\x86\Release\ARCHBLOXLauncher_XP.exe" />
-    <Content Include="obj\x86\Release\ARCHBLOXLauncher_XP.pdb" />
-    <Content Include="obj\x86\Release\Interop.IWshRuntimeLibrary.dll" />
-    <Content Include="obj\x86\Release\Interop.Shell32.dll" />
-    <Content Include="obj\x86\Release\TempPE\Properties.Resources.Designer.cs.dll" />
-    <Content Include="Resources\archblox.png" />
-    <Content Include="Resources\archbloxlowres.png" />
-    <Content Include="Resources\buttonblue200.png" />
-    <Content Include="Resources\buttongreen200.png" />
-    <Content Include="Resources\unknown.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="IWshRuntimeLibrary">
@@ -159,6 +112,21 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonblue200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttongreen200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\archbloxlowres.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\archblox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="archblox.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
