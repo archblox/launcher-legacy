@@ -112,7 +112,7 @@ namespace ARCHBLOXLauncher_XP
                 string filePath = Path.Combine(Path.GetTempPath(), version_string + ".zip");
                 Extensions.UnZip(filePath, clientPath);
                 File.Delete(filePath);
-                label1.Text = "Installing URi...";
+                label1.Text = "Installing URI...";
                 try
                 {   
                     ARCHBLOXProtocol.ARCHBLOXURIProtocol.Register();
@@ -124,7 +124,7 @@ namespace ARCHBLOXLauncher_XP
                     label1.Text = "ARCHBLOX has been installed!";
                 } else
                 {
-                    label1.Text = "ARCHBLOX installed without URI.";
+                    label1.Text = "Failed to install URI.";
                 }
                 Thread.Sleep(1000);
                 this.Hide();
@@ -139,7 +139,7 @@ namespace ARCHBLOXLauncher_XP
             double receive = double.Parse(e.BytesReceived.ToString());
             double total = double.Parse(e.TotalBytesToReceive.ToString());
             double percentage = receive / total * 100;
-            label1.Text = "Installing ARCHBLOX... (" + Math.Truncate(percentage).ToString() + "% Completed)";
+            label1.Text = "Installing ARCHBLOX... (" + Math.Truncate(percentage).ToString() + "%)";
             progressBar1.Value = int.Parse(Math.Truncate(percentage).ToString());
         }
     }

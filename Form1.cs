@@ -16,7 +16,7 @@ namespace ARCHBLOXLauncher_XP
             WshShell shell = new WshShell();
             string shortcutAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + @"\ARCHBLOX Launcher.lnk";
             IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(shortcutAddress);
-            shortcut.Description = "The launcher for ARCHBLOX Player.";
+            shortcut.Description = "ARCHBLOX Player";
             shortcut.TargetPath = ARCHBLOXLauncher_XP.Extensions.GetExecutablePath();
             shortcut.Save();
         }
